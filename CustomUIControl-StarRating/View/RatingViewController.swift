@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RatingViewController.swift
 //  CustomUIControl-StarRating
 //
 //  Created by Stephanie Ballard on 4/16/20.
@@ -8,15 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RatingViewController: UIViewController {
+    
+    var customControl = CustomControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationTitle()
     }
     
-
+    func navigationTitle() {
+        if customControl.value == 1 {
+            self.title = "User Rating: \(customControl.value) Star."
+        } else {
+            self.title = "User Rating: \(customControl.value) Stars."
+        }
+    }
+    
+    @IBAction func updateRating(_ ratingControl: CustomControl) {
+    }
+    
     /*
     // MARK: - Navigation
 

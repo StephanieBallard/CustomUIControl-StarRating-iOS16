@@ -23,14 +23,29 @@
             </objects>
             <point key="canvasLocation" x="-629" y="130"/>
         </scene>
-        <!--View Controller-->
+        <!--Rating View Controller-->
         <scene sceneID="cOS-5Q-j9Q">
             <objects>
-                <viewController id="zFm-aF-1IK" customClass="ViewController" customModule="CustomUIControl_StarRating" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zFm-aF-1IK" customClass="RatingViewController" customModule="CustomUIControl_StarRating" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ej6-vG-Yxx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I89-3i-wqT" customClass="CustomControl" customModule="CustomUIControl_StarRating" customModuleProvider="target">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.50980392159999999" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="updateRating:" destination="zFm-aF-1IK" eventType="valueChanged" id="1lV-QI-jUq"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="I89-3i-wqT" firstAttribute="leading" secondItem="8Qp-lD-a8F" secondAttribute="leading" constant="87" id="3ye-Ya-bZo"/>
+                            <constraint firstItem="I89-3i-wqT" firstAttribute="top" secondItem="8Qp-lD-a8F" secondAttribute="top" constant="296" id="Axj-Uk-fzR"/>
+                            <constraint firstItem="I89-3i-wqT" firstAttribute="centerX" secondItem="ej6-vG-Yxx" secondAttribute="centerX" id="Jj7-33-fz6"/>
+                            <constraint firstItem="I89-3i-wqT" firstAttribute="centerY" secondItem="ej6-vG-Yxx" secondAttribute="centerY" id="Rt7-pe-jy5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8Qp-lD-a8F"/>
                     </view>
                     <navigationItem key="navigationItem" id="DK8-V5-F6j"/>
