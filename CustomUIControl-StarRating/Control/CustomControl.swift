@@ -34,6 +34,8 @@ class CustomControl: UIControl {
                                               width: componentDimension,
                                               height: componentDimension))
             label.translatesAutoresizingMaskIntoConstraints = true
+            addSubview(label)
+            components.append(label)
             
         }
     }
