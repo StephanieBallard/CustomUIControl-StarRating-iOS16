@@ -34,10 +34,22 @@ class CustomControl: UIControl {
                                               width: componentDimension,
                                               height: componentDimension))
             label.translatesAutoresizingMaskIntoConstraints = true
+            label.tag = i
             addSubview(label)
             components.append(label)
+            label.font = UIFont.systemFont(ofSize: 32)
+            label.text = "★"
+            label.textAlignment = .center
             
+            if i == 1 {
+                label.textColor = componentActiveColor
+            } else {
+                label.textColor = componentInactiveColor
+            }
         }
+        
+        
     }
-    
 }
+
+
