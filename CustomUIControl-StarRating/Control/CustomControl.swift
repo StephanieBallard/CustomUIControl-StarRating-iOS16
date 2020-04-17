@@ -10,10 +10,10 @@ import UIKit
 
 class CustomControl: UIControl {
     
-    var value = 3
+    var value = 1
     private let componentDimension: CGFloat = 40.0
     private let componentCount = 5
-    private let componentActiveColor = UIColor.black
+    private let componentActiveColor = UIColor.yellow
     private let componentInactiveColor = UIColor.gray
     private var components: [UILabel] = []
     
@@ -54,6 +54,25 @@ class CustomControl: UIControl {
         let componentsSpacing = CGFloat(componentCount + 1) * 8.0
         let width = componentsWidth + componentsSpacing
         return CGSize(width: width, height: componentDimension)
+    }
+    
+    func updateValue(at touch: UITouch) {
+        for component in components {
+            if component.frame.contains(touch.location(in: self)) {
+                value = component.tag
+                for label in components {
+                    if label.tag <= value {
+                        label.textColor = componentActiveColor
+                    }
+                }
+            } else {
+                for label in components {
+                    if label.tag > value {
+                        label.textColor = componentInactiveColor
+                    }
+                }
+            }
+        }
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
