@@ -47,8 +47,29 @@ class CustomControl: UIControl {
                 label.textColor = componentInactiveColor
             }
         }
-        
-        
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        let componentsWidth = CGFloat(componentCount) * componentDimension
+        let componentsSpacing = CGFloat(componentCount + 1) * 8.0
+        let width = componentsWidth + componentsSpacing
+        return CGSize(width: width, height: componentDimension)
+    }
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        <#code#>
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        <#code#>
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        <#code#>
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        <#code#>
     }
 }
 
